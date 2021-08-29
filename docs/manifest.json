@@ -1,0 +1,150 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/syslib/systemlibrary-common-web-httpbaseclient/source/SystemLibrary.Common.Web.HttpBaseClient",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.CalleeCancelledRequestException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.CalleeCancelledRequestException.html",
+          "hash": "RdhF3aTZzbFOnOrCNeJ2qt18jWxx16L8llJsxoZ180M="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.ClientResponse-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.ClientResponse-1.html",
+          "hash": "4CLQSXgKlPV6tdTt/HIyxPVmtz4Zzn2PJxA8HVS6iK4="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.HttpBaseClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.HttpBaseClient.html",
+          "hash": "EdQO2sk2gTzVxh9AT250MO/v4KjFO65Np9ufHstuPMI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.MediaType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.MediaType.html",
+          "hash": "e1OeIMMHKNezeodtmXXIylefiKDsZNQIZYamqmhhH1s="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.RetryRequestException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.RetryRequestException.html",
+          "hash": "N7uwdmKr4ScUfctx1QRBe91g0afMwmC0+EXZFlqKKCM="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.yml",
+      "output": {
+        ".html": {
+          "relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.html",
+          "hash": "Eu82Um9StadeHM6ubnktlSO1QmozkNiAjnr1MXudJC4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "SystemLibrary.Common.Web.HttpBaseClient/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "SystemLibrary.Common.Web.HttpBaseClient/toc.html",
+          "hash": "0qr1rdhxKNhbjyiJbeITBL0iDkD/NEfZ/x2gRC76Ayo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "SystemLibrary.Common.Web.HttpBaseClient_index.md",
+      "output": {
+        ".html": {
+          "relative_path": "SystemLibrary.Common.Web.HttpBaseClient_index.html",
+          "hash": "CeWVMH+jqaPP7wsFSO35wXbkczGzv0SMPUd+oK3+L+0="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 1
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 6,
+          "skipped_file_count": 5
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

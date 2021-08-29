@@ -1,0 +1,39 @@
+﻿<?xml version = "1.0" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>SystemLibrary.Common.Web.HttpBaseClient</id>
+
+        <version>1.0.0.3</version>
+
+        <authors>System Library</authors>
+        
+        <owners>System Library</owners>
+        
+        <projectUrl>http://systemlibrary.com/package/common-web-httpbaseclient</projectUrl>
+         
+        <license type="expression">Apache-2.0</license>
+		
+		<icon>nuget-icon.png</icon>
+        
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+
+        <releaseNotes>
+			Latest info: https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/#user-content-latest-version
+			Documentation: https://systemlibrary.github.io/systemlibrary-common-web-httpbaseclient/
+		</releaseNotes>
+
+        <description>SystemLibrary.Common.Web.HttpBaseClient package contains a HttpClient that is cached, with built in retry handler and a built in timeout handler. It reuses the underlying TCP connection for up to 5 minutes. Check the github pages for further documentation and a real world sample</description>
+
+        <copyright>Copyright © System Library</copyright>
+
+        <tags>C# .NET framework httpclient retry timeout api</tags>
+
+        <dependencies>
+        </dependencies>
+    </metadata>
+
+	<files>
+		<file src="nuget-icon.png" target="" />
+	</files>	
+</package>
+<!-- Command: nuget pack SystemLibrary.Common.Web.HttpBaseClient.csproj -p Configuration=Release -->
