@@ -106,10 +106,10 @@
   <h1 id="SystemLibrary_Common_Web_RetryRequestException" data-uid="SystemLibrary.Common.Web.RetryRequestException" class="h1-custom-display className">public class RetryRequestException : Exception, ISerializable, _Exception</h1>
   
   <div class="h1-class-summary-container">
-    <div class="markdown level0 summary h1-class-summary"><p>Retry request exceptions are thrown.</p>
-<p>If &quot;retryOnceOnRequestCancelled&quot; is set to True, then if the retry is erroring too, this exception is thrown to the callee</p>
+    <div class="markdown level0 summary h1-class-summary"><p>A retry request exception is thrown if:</p>
 <ul>
-<li>If retryOnceOnRequestCancelled is not True, this exception will never occur for the callee</li>
+<li>&quot;retryOnceOnRequestCancelled&quot; is set to True, then if the retry is erroring too, this exception is thrown to the callee (you)</li>
+<li>If retryOnceOnRequestCancelled is False, this exception will never occur for the callee (you)</li>
 </ul>
 <p>Note: A retry request gets a fixed timeout of 10 seconds to finish the request</p>
 </div>
@@ -180,7 +180,7 @@
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/Client/Handlers/RetryHandler/RetryRequestException.cs/#L15">View Source</a>
+    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/Client/Handlers/RetryHandler/RetryRequestException.cs/#L14">View Source</a>
   </span>
   <a id="SystemLibrary_Common_Web_RetryRequestException__ctor_" data-uid="SystemLibrary.Common.Web.RetryRequestException.#ctor*"></a>
   
@@ -563,7 +563,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/Client/Handlers/RetryHandler/RetryRequestException.cs/#L13" class="contribution-link">View Source</a>
+                    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/Client/Handlers/RetryHandler/RetryRequestException.cs/#L12" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

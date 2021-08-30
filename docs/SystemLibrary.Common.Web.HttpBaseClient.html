@@ -133,32 +133,45 @@
           <h5 id="SystemLibrary_Common_Web_HttpBaseClient_examples">Examples</h5>
         </div>
         <div class="syslib-tab-menu-data" style="display: none;"><div class="syslib-tab-menu-data--close">X</div>
-          <div class="codewrapper"><pre><code>class HttpBinResponse
+          <div class="codewrapper"><p>A simple class to hold our Response</p>
+<pre><code>class HttpBinResponse
 {
    public string url { get; set; }
-}
-
-class HttpBinClient : HttpBaseClient
+}</code></pre>
+<p>Our Client - you can new up HttpBaseClient directly if you like, but here we can reuse &quot;apiUrl&quot; (and other stuff, headers/what not) for all methods against the same client</p>
+<pre><code>class HttpBinClient : HttpBaseClient
 {
-   const string apiUrl = &quot;http://httpbin.org&quot;;
+    const string apiUrl = &quot;http://httpbin.org&quot;;
 
-   public HttpBinClient() : base(retryOnceOnRequestCancelled: true, defaultTimeoutMilliseconds: 5000, ignoreSslErrors: false)
-   {
-   }
-   public HttpBinResponse Get()
-   {
-       return base.Get&lt;HttpBinResponse>(apiUrl + &quot;/get&quot;).Data;
-   }
-}
+    public HttpBinClient() : base(retryOnceOnRequestCancelled: true, defaultTimeoutMilliseconds: 5000, ignoreSslErrors: false)
+    {
+    }
 
-[TestMethod]
+    public HttpBinResponse Get()
+    {
+        return base.Get&lt;HttpBinResponse>(apiUrl + &quot;/get&quot;).Data;
+    }
+}</code></pre>
+<p>Running the above Client and Response in a UnitTest project as such:</p>
+<pre><code>[TestMethod]
 public void Test()
 {
-    var httpBinClient = new HttpBinClient();
+    var client = new HttpBinClient();
 
-    var binResponse = httpBinClient.Get();
+    var response = client.Get();
 
-    Assert.IsTrue(binResponse.url.Contains(&quot;http&quot;));
+    Assert.IsTrue(response.url.Contains(&quot;http&quot;));
+    //Visit: http://httpbin.org/get to see the actual value of &apos;url&apos;, then you know this Assert statement is true
+}</code></pre>
+<p>Another example of using the HttpBaseClient directly:</p>
+<pre><code>public void Test()
+{
+    var client = new HttpBaseClient();
+
+    var response = client.Get&lt;string>(&quot;http://httpbing.org.get/&quot;);
+
+    Assert.IsTrue(response.Contains(&quot;http&quot;));
+    //Response is now the whole json text that the url: http://httpbin.org/get is returning
 }</code></pre>
 </div>
           <div class="comment-examples-container-bottom"></div>
@@ -178,7 +191,7 @@ public void Test()
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/HttpBaseClient.cs/#L66">View Source</a>
+    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/HttpBaseClient.cs/#L89">View Source</a>
   </span>
   <a id="SystemLibrary_Common_Web_HttpBaseClient__ctor_" data-uid="SystemLibrary.Common.Web.HttpBaseClient.#ctor*"></a>
   
@@ -237,7 +250,7 @@ public void Test()
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/HttpBaseClient.cs/#L115">View Source</a>
+    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/HttpBaseClient.cs/#L138">View Source</a>
   </span>
   <a id="SystemLibrary_Common_Web_HttpBaseClient_Delete_" data-uid="SystemLibrary.Common.Web.HttpBaseClient.Delete*"></a>
   
@@ -368,7 +381,7 @@ var response = new HttpBaseClient().Delete&lt;string>(&quot;https://www.systemli
   
   
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/HttpBaseClient.cs/#L132">View Source</a>
+    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/HttpBaseClient.cs/#L155">View Source</a>
   </span>
   <a id="SystemLibrary_Common_Web_HttpBaseClient_DeleteAsync_" data-uid="SystemLibrary.Common.Web.HttpBaseClient.DeleteAsync*"></a>
   
@@ -499,7 +512,7 @@ var response = await new HttpBaseClient().DeleteAsync&lt;string>(&quot;https://w
   
   
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/HttpBaseClient.cs/#L189">View Source</a>
+    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/HttpBaseClient.cs/#L213">View Source</a>
   </span>
   <a id="SystemLibrary_Common_Web_HttpBaseClient_Get_" data-uid="SystemLibrary.Common.Web.HttpBaseClient.Get*"></a>
   
@@ -533,7 +546,8 @@ var response = await new HttpBaseClient().DeleteAsync&lt;string>(&quot;https://w
 var client = new Client();
 
 var json = client.Get();
-//json contains the response as string on the json format</code></pre>
+//json the text from the response, if server sent json formatted text, that is what it now contains
+//if server sends XML response, the XML is not converted to json... the response from server is at is it in string format</code></pre>
 
           </div>
           <div class="comment-examples-container-bottom"></div>
@@ -635,7 +649,7 @@ var json = client.Get();
   
   
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/HttpBaseClient.cs/#L206">View Source</a>
+    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/HttpBaseClient.cs/#L230">View Source</a>
   </span>
   <a id="SystemLibrary_Common_Web_HttpBaseClient_GetAsync_" data-uid="SystemLibrary.Common.Web.HttpBaseClient.GetAsync*"></a>
   
@@ -761,7 +775,7 @@ var response = new await HttpBaseClient().GetAsync&lt;string>(&quot;https://www.
   
   
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/HttpBaseClient.cs/#L84">View Source</a>
+    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/HttpBaseClient.cs/#L107">View Source</a>
   </span>
   <a id="SystemLibrary_Common_Web_HttpBaseClient_Head_" data-uid="SystemLibrary.Common.Web.HttpBaseClient.Head*"></a>
   
@@ -886,7 +900,7 @@ var response = new await HttpBaseClient().GetAsync&lt;string>(&quot;https://www.
   
   
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/HttpBaseClient.cs/#L100">View Source</a>
+    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/HttpBaseClient.cs/#L123">View Source</a>
   </span>
   <a id="SystemLibrary_Common_Web_HttpBaseClient_HeadAsync_" data-uid="SystemLibrary.Common.Web.HttpBaseClient.HeadAsync*"></a>
   
@@ -1011,7 +1025,7 @@ var response = new await HttpBaseClient().GetAsync&lt;string>(&quot;https://www.
   
   
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/HttpBaseClient.cs/#L221">View Source</a>
+    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/HttpBaseClient.cs/#L245">View Source</a>
   </span>
   <a id="SystemLibrary_Common_Web_HttpBaseClient_Post_" data-uid="SystemLibrary.Common.Web.HttpBaseClient.Post*"></a>
   
@@ -1142,7 +1156,7 @@ var response = new HttpBaseClient().Post&lt;string>(&quot;https://www.systemlibr
   
   
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/HttpBaseClient.cs/#L238">View Source</a>
+    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/HttpBaseClient.cs/#L262">View Source</a>
   </span>
   <a id="SystemLibrary_Common_Web_HttpBaseClient_PostAsync_" data-uid="SystemLibrary.Common.Web.HttpBaseClient.PostAsync*"></a>
   
@@ -1273,7 +1287,7 @@ var response = await new HttpBaseClient().PostAsync&lt;string>(&quot;https://www
   
   
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/HttpBaseClient.cs/#L147">View Source</a>
+    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/HttpBaseClient.cs/#L170">View Source</a>
   </span>
   <a id="SystemLibrary_Common_Web_HttpBaseClient_Put_" data-uid="SystemLibrary.Common.Web.HttpBaseClient.Put*"></a>
   
@@ -1404,7 +1418,7 @@ var response = new HttpBaseClient().Put&lt;string>(&quot;https://www.systemlibra
   
   
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/HttpBaseClient.cs/#L164">View Source</a>
+    <a href="https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/blob/master/source/SystemLibrary.Common.Web.HttpBaseClient/HttpBaseClient/HttpBaseClient.cs/#L187">View Source</a>
   </span>
   <a id="SystemLibrary_Common_Web_HttpBaseClient_PutAsync_" data-uid="SystemLibrary.Common.Web.HttpBaseClient.PutAsync*"></a>
   

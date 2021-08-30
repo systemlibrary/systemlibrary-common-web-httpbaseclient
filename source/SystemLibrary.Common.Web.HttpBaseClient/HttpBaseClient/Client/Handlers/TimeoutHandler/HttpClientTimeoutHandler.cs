@@ -54,13 +54,9 @@ namespace SystemLibrary.Common.Web
                     }
                     catch (RetryRequestException)
                     {
-                        if (cancellationToken != null)
-                        {
-                            if (cancellationToken.IsCancellationRequested)
-                            {
-                                throw new CalleeCancelledRequestException("Callee cancelled the request, not retrying against " + request.RequestUri.AbsoluteUri);
-                            }
-                        }
+                        if(ClientRequestedCancellation(cancellationToken))
+                            throw new CalleeCancelledRequestException("Callee cancelled the request, not retrying against " + request.RequestUri.AbsoluteUri);
+
                         throw;
                     }
                 }

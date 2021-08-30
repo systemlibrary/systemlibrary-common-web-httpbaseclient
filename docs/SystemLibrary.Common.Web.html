@@ -107,8 +107,10 @@
     <h3 id="classes">Classes
   </h3>
       <h4><a class="xref" href="SystemLibrary.Common.Web.CalleeCancelledRequestException.html">CalleeCancelledRequestException</a></h4>
-      <section><p>Callee cancelled request exception is thrown when the callee cancels the request, which
-occurs through the cancellation token that you can pass to each request methods</p>
+      <section><p>The Callee Cancelled Request Exception is thrown when the callee (you) cancel the request.</p>
+<ul>
+<li>To cancel a request you must pass a 'Cancellation Token', and then cancel the request through the Cancellation Token</li>
+</ul>
 </section>
       <h4><a class="xref" href="SystemLibrary.Common.Web.ClientResponse-1.html">ClientResponse&lt;T&gt;</a></h4>
       <section><p>The main response class that all http requests in the HttpBaseClient returns</p>
@@ -129,10 +131,10 @@ occurs through the cancellation token that you can pass to each request methods<
 <p>You can use the HttpBaseClient directly by new'ing it up instead of generating your own Client class that inherits it, its up to you...</p>
 </section>
       <h4><a class="xref" href="SystemLibrary.Common.Web.RetryRequestException.html">RetryRequestException</a></h4>
-      <section><p>Retry request exceptions are thrown.</p>
-<p>If &quot;retryOnceOnRequestCancelled&quot; is set to True, then if the retry is erroring too, this exception is thrown to the callee</p>
+      <section><p>A retry request exception is thrown if:</p>
 <ul>
-<li>If retryOnceOnRequestCancelled is not True, this exception will never occur for the callee</li>
+<li>&quot;retryOnceOnRequestCancelled&quot; is set to True, then if the retry is erroring too, this exception is thrown to the callee (you)</li>
+<li>If retryOnceOnRequestCancelled is False, this exception will never occur for the callee (you)</li>
 </ul>
 <p>Note: A retry request gets a fixed timeout of 10 seconds to finish the request</p>
 </section>

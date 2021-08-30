@@ -3,8 +3,8 @@
 namespace SystemLibrary.Common.Web
 {
     /// <summary>
-    /// Callee cancelled request exception is thrown when the callee cancels the request, which
-    /// occurs through the cancellation token that you can pass to each request methods
+    /// The Callee Cancelled Request Exception is thrown when the callee (you) cancel the request.
+    /// - To cancel a request you must pass a 'Cancellation Token', and then cancel the request through the Cancellation Token
     /// </summary>
     public class CalleeCancelledRequestException : Exception
     {

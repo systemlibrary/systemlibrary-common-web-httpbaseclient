@@ -20,12 +20,16 @@ namespace SystemLibrary.Common.Web
     /// You can use the HttpBaseClient directly by new'ing it up instead of generating your own Client class that inherits it, its up to you...
     /// </summary>
     /// <example>
+    /// A simple class to hold our Response
     /// <code>
     ///class HttpBinResponse
     ///{
     ///    public string url { get; set; }
     ///}
+    ///</code>
     ///
+    /// Our Client - you can new up HttpBaseClient directly if you like, but here we can reuse "apiUrl" (and other stuff, headers/what not) for all methods against the same client
+    ///<code>
     ///class HttpBinClient : HttpBaseClient
     ///{
     ///    const string apiUrl = "http://httpbin.org";
@@ -33,20 +37,39 @@ namespace SystemLibrary.Common.Web
     ///    public HttpBinClient() : base(retryOnceOnRequestCancelled: true, defaultTimeoutMilliseconds: 5000, ignoreSslErrors: false)
     ///    {
     ///    }
+    ///    
     ///    public HttpBinResponse Get()
     ///    {
     ///        return base.Get&lt;HttpBinResponse&gt;(apiUrl + "/get").Data;
     ///    }
     ///}
+    ///</code>
     ///
+    /// Running the above Client and Response in a UnitTest project as such:
+    /// <code>
     /// [TestMethod]
     /// public void Test()
     /// {
-    ///     var httpBinClient = new HttpBinClient();
+    ///     var client = new HttpBinClient();
     /// 
-    ///     var binResponse = httpBinClient.Get();
+    ///     var response = client.Get();
     /// 
-    ///     Assert.IsTrue(binResponse.url.Contains("http"));
+    ///     Assert.IsTrue(response.url.Contains("http"));
+    ///     //Visit: http://httpbin.org/get to see the actual value of 'url', then you know this Assert statement is true
+    /// }
+    /// </code>
+    /// 
+    /// 
+    /// Another example of using the HttpBaseClient directly:
+    /// <code>
+    /// public void Test()
+    /// {
+    ///     var client = new HttpBaseClient();
+    /// 
+    ///     var response = client.Get&lt;string&gt;("http://httpbing.org.get/");
+    /// 
+    ///     Assert.IsTrue(response.Contains("http"));
+    ///     //Response is now the whole json text that the url: http://httpbin.org/get is returning
     /// }
     /// </code>
     /// </example>
@@ -183,7 +206,8 @@ namespace SystemLibrary.Common.Web
         /// var client = new Client();
         /// 
         /// var json = client.Get();
-        /// //json contains the response as string on the json format
+        /// //json the text from the response, if server sent json formatted text, that is what it now contains
+        /// //if server sends XML response, the XML is not converted to json... the response from server is at is it in string format
         /// </code>
         /// </example>
         public ClientResponse<T> Get<T>(string url, MediaType mediaType = MediaType.json, int timeoutMilliseconds = DefaultTimeoutMilliseconds, IDictionary<string, string> headers = null, JsonSerializerOptions jsonSerializerOptions = default, CancellationToken cancellationToken = default)
