@@ -20,6 +20,7 @@
 
 ## Install
 - Install through Nuget Package Manager in Visual Studio
+- https://www.nuget.org/packages/SystemLibrary.Common.Web.HttpBaseClient/
 
 ## Docs
 https://systemlibrary.github.io/systemlibrary-common-web-httpbaseclient/
