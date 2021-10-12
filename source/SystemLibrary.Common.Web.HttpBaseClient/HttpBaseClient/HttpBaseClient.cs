@@ -7,17 +7,18 @@ using System.Threading.Tasks;
 namespace SystemLibrary.Common.Web
 {
     /// <summary>
-    /// HttpBaseClient is a base class for all your api integrations in your project
+    /// HttpBaseClient is a class for all http(s) requests in your project
     /// 
-    /// Contains:
-    /// - A retry handler that can be configured through the constructor
-    ///     - If request fails and retry is True, the retry request uses a new tcp connection and gets a fixed 10 seconds timeout
-    ///
-    /// - A timeout handler configurable through constructor or each public request method
+    /// Has:
+    /// - a retry handler configured through constructor
+    ///     - if request fails and retry is True, the retry request uses a new tcp connection and gets a fixed 10 seconds timeout
+    ///     - a retry request occurs only for GET, HEAD or OPTION request methods, never for PUT/POST/DELETE
     /// 
-    /// - Each connection is cached and reused for up to 5 minutes
+    /// - a timeout handler configurable through constructor, but also per method
     /// 
-    /// You can use the HttpBaseClient directly by new'ing it up instead of generating your own Client class that inherits it, its up to you...
+    /// - each underlying tcp connection is cached for up to 5 minutes
+    /// 
+    /// Use HttpBaseClient directly or inherit from it, see the examples
     /// </summary>
     /// <example>
     /// A simple class to hold our Response
