@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SystemLibrary.Common.Web.HttpBaseClientTests
 {
-    partial class BaseHttpClientTests
+    partial class HttpBaseClientTests
     {
         [TestMethod]
         public void Get_Cancel_Callee_Exception_Without_Retrying_Success()

@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SystemLibrary.Common.Web.HttpBaseClientTests
 {
-    partial class BaseHttpClientTests
+    partial class HttpBaseClientTests
     {
         [TestMethod]
         [DataRow(3)]

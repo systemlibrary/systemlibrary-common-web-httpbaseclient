@@ -12,13 +12,10 @@ namespace SystemLibrary.Common.Web
             {
                 public HttpClientRetryHandler(bool ignoreSslErrors)
                 {
-                    InnerHandler = new WebRequestHandler();
-                    if (ignoreSslErrors && InnerHandler is WebRequestHandler handler)
+                    InnerHandler = new HttpClientHandler();
+                    if (ignoreSslErrors && InnerHandler is HttpClientHandler handler)
                     {
-                        handler.ServerCertificateCustomValidationCallback = (message, cert, chain, sslPolicyErrors) =>
-                        {
-                            return true;
-                        };
+                        handler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => { return true; };
                     }
                 }
 

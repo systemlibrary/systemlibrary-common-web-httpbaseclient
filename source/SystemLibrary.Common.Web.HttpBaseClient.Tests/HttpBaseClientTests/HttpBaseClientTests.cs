@@ -3,7 +3,7 @@
 namespace SystemLibrary.Common.Web.HttpBaseClientTests
 {
     [TestClass]
-    public partial class BaseHttpClientTests
+    public partial class HttpBaseClientTests
     {
     }
 }

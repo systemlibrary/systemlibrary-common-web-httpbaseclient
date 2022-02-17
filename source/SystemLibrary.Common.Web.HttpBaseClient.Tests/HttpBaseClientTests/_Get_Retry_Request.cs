@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SystemLibrary.Common.Web.HttpBaseClientTests
 {
-    partial class BaseHttpClientTests
+    partial class HttpBaseClientTests
     {
         [TestMethod]
         public void Get_Retry_Request_Success()

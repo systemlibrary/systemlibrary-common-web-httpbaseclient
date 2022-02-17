@@ -22,16 +22,12 @@ namespace SystemLibrary.Common.Web
                         InnerHandler = retryRequestHandler;
                     else
                     {
-                        InnerHandler = new WebRequestHandler();
-                        if (ignoreSslErrors && InnerHandler is WebRequestHandler handler)
+                        InnerHandler = new HttpClientHandler();
+                        if (ignoreSslErrors && InnerHandler is HttpClientHandler handler)
                         {
-                            handler.ServerCertificateCustomValidationCallback = (message, cert, chain, sslPolicyErrors) =>
-                            {
-                                return true;
-                            };
+                            handler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => { return true; };
                         }
                     }
-
                 }
 
                 protected async override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)

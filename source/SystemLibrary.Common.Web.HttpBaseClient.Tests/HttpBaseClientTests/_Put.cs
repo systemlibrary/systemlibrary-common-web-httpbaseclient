@@ -2,7 +2,7 @@
 
 namespace SystemLibrary.Common.Web.HttpBaseClientTests
 {
-    partial class BaseHttpClientTests
+    partial class HttpBaseClientTests
     {
         [TestMethod]
         public void Put_PlainText_Success()

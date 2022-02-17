@@ -1,17 +1,11 @@
-﻿using System;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using SystemLibrary.Common.Net;
 using SystemLibrary.Common.Net.Json;
 
 namespace SystemLibrary.Common.Web.HttpBaseClientTests
 {
-    partial class BaseHttpClientTests
+    partial class HttpBaseClientTests
     {
         class Form
         {

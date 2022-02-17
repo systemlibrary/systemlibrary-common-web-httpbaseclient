@@ -5,11 +5,35 @@
   "files": [
     {
       "type": "ManagedReference",
+      "source_relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.AppSettingsConfig.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.AppSettingsConfig.Configuration.html",
+          "hash": "Wj2NxB77rGqVfd+n+DmbktKnheZseAE2gfS4V/+/Qkc="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.AppSettingsConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.AppSettingsConfig.html",
+          "hash": "x0Dftnhx1ZsAfZ5hF38aMU7A7/ordHrw14mWnEpfhvo="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.CalleeCancelledRequestException.yml",
       "output": {
         ".html": {
           "relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.CalleeCancelledRequestException.html",
-          "hash": "yq0rsuWy6C0chPOJ0NYLwsGFu621jULJDyLuMwLA3sI="
+          "hash": "c3hhuTGJVrjutJrTX81MenlLl+UfhaVFkgibCKpbu58="
         }
       },
       "is_incremental": true,
@@ -21,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.ClientResponse-1.html",
-          "hash": "MGKZED6vvWshJnWYJYSlRMSsTL6n63Flpjj4GQEesMg="
+          "hash": "81DXcz/sFETmW1i1pgJBNwe+ILoSqlS1/E0wmHvbSOg="
         }
       },
       "is_incremental": true,
@@ -33,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.HttpBaseClient.html",
-          "hash": "XooK4LbaD2Y+MdHYUT96jGzol6ViaszupzefO8mWEeo="
+          "hash": "6MqXuErUSbMSi8VysJxipm2Nj1ZKqBRjXsKxVmOnU0I="
         }
       },
       "is_incremental": true,
@@ -45,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.MediaType.html",
-          "hash": "e1OeIMMHKNezeodtmXXIylefiKDsZNQIZYamqmhhH1s="
+          "hash": "hutu4pgSShFIcLRvu4uUZSRhC/pC+QhwnkPfHu1S6os="
         }
       },
       "is_incremental": true,
@@ -57,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.RetryRequestException.html",
-          "hash": "l/jhO7vVkK2ado0Rbrwx38xXOJ4wn0+sjak6rGYS4MU="
+          "hash": "ySGLjtAo/gaXSlynyY+W+pVA83RBqIwWIppZzU55K7s="
         }
       },
       "is_incremental": true,
@@ -69,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.html",
-          "hash": "UqScifoEHvExkUpn/NJlvmNiHm0PJhLVwljqQmJySNo="
+          "hash": "ioYCXIEXTphft5iEdPNm3VhANJwmqGrdsNzckgQRjCg="
         }
       },
       "is_incremental": true,
@@ -81,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "SystemLibrary.Common.Web.HttpBaseClient/toc.html",
-          "hash": "0qr1rdhxKNhbjyiJbeITBL0iDkD/NEfZ/x2gRC76Ayo="
+          "hash": "6HTgK6yA7xI7zfwaMWwbWPzgnDEtAovT8RUX5Y/QpZ4="
         }
       },
       "is_incremental": false,
@@ -93,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "SystemLibrary.Common.Web.HttpBaseClient_index.html",
-          "hash": "CeWVMH+jqaPP7wsFSO35wXbkczGzv0SMPUd+oK3+L+0="
+          "hash": "sD0i3hb/HuBxU6RwqWSt9leD4pBLsgNBmnH4Mhf1vw8="
         }
       },
       "is_incremental": true,
@@ -118,8 +142,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 6,
-          "skipped_file_count": 6
+          "total_file_count": 8,
+          "skipped_file_count": 8
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

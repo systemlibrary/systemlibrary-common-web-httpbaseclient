@@ -8,7 +8,9 @@ namespace SystemLibrary.Common.Web
     {
         partial class Client
         {
-            const int ClientExpiresInSeconds = 300;
+            static int _ClientExpiresInSeconds = -1;
+            static int ClientExpiresInSeconds => _ClientExpiresInSeconds > -1 ? _ClientExpiresInSeconds : 
+                (_ClientExpiresInSeconds = AppSettingsConfig.Current.SystemLibraryCommonWebHttpBaseClient.CacheDurationSeconds);
 
             static ConcurrentDictionary<string, CacheModel> Cache;
             static ConcurrentDictionary<string, CacheModel> DisposeQueue;
@@ -52,7 +54,13 @@ namespace SystemLibrary.Common.Web
                     Expires = DateTime.Now.AddSeconds(ClientExpiresInSeconds)
                 };
 
-                Cache.TryAdd(key, httpClientCacheModel);
+                Dump.Write(AppSettingsConfig.Current.SystemLibraryCommonWebHttpBaseClient);
+
+                Dump.Write("SECONDS: " + ClientExpiresInSeconds);
+                if (ClientExpiresInSeconds > 0)
+                {
+                    Cache.TryAdd(key, httpClientCacheModel);
+                }
                 return httpClientCacheModel.HttpClientCached;
             }
 

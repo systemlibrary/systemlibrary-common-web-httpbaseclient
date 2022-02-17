@@ -3,13 +3,13 @@
     <metadata>
         <id>SystemLibrary.Common.Web.HttpBaseClient</id>
 
-        <version>1.0.0.3</version>
+        <version>2.0.0.8</version>
 
         <authors>System Library</authors>
         
         <owners>System Library</owners>
         
-        <projectUrl>http://systemlibrary.com/package/common-web-httpbaseclient</projectUrl>
+        <projectUrl>https://systemlibrary.com/package/SystemLibrary.Common.Web.HttpBaseClient</projectUrl>
          
         <license type="expression">Apache-2.0</license>
 		
@@ -17,18 +17,29 @@
         
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
 
-        <releaseNotes>
-			Latest info: https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient/#user-content-latest-version
-			Documentation: https://systemlibrary.github.io/systemlibrary-common-web-httpbaseclient/
+		<releaseNotes>
+			Latest version:
+			https://github.com/systemlibrary/systemlibrary-common-web-httpbaseclient#latest-version
 		</releaseNotes>
+		
+        <description>
+			SystemLibrary.Common.Web.HttpBaseClient for any .NET &gt;= 5 application - one way of calling external services/API's
 
-        <description>SystemLibrary.Common.Web.HttpBaseClient package contains a HttpClient that is cached, with built in retry handler and a built in timeout handler. It reuses the underlying TCP connection for up to 5 minutes. Check the github pages for further documentation and a real world sample</description>
+			Selling points:
+			* Cache's the underlying TCP Socket Connection for 5 minutes
+			** No more socket exhaustion, nor need of 'iisreset' due to DNS changes or network bugs
+			* Configure a 'Retry Request' if a DNS change occurs
+			** A new TCP Socket Connection will be used if the Cached connection fails due to DNS change
+			* Configure a 'Timeout' per request or per client, or a mix
+		</description>
 
         <copyright>Copyright © System Library</copyright>
 
-        <tags>C# .NET framework httpclient retry timeout api</tags>
+        <tags>C# .NET httpclient retry timeout api</tags>
 
         <dependencies>
+			<dependency id="System.Net.Http" version="4.3.4" />
+			<dependency id="SystemLibrary.Common.Net.Json" version="2.0.0.8" />
         </dependencies>
     </metadata>
 

@@ -1,29 +1,35 @@
-# SystemLibrary Common Web BaseHttpClient
+# SystemLibrary Common Web HttpBaseClient
 
 ## Requirements
-- .NET 4.8
+- &gt;= .NET 5
 - System.Text.Json
-- SystemLibrary.Common.Net.Json
-- SystemLibrary.Common.Net
+- System.Web.Http
+- SystemLibrary.Common.Net.Json &gt;= 2.0.0.8
 
 ## Latest Version
-- Added comments to each method with some sample code
-- Updated /docs
-- Updated dependencies to latest patches
+- Updated dependencies
+- Updated Framework repository to .NET 5
 
 ## Description
-- One base class to call external API's/services
-- Contains a cache for the HttpClient which greatly reduces amount of TCP connections created
-- Contains a built in timeout handler which can be configured per request type (GET, POST, PUT, ...) or once per Client
-- Configure a Retry if a request fails one time due to either cancellation/DNS change/...
-- See the docs for a real world sample
+SystemLibrary.Common.Web.HttpBaseClient for any .NET &gt;= 5 application - one way of calling external services/API's
 
-## Install
-- Install through Nuget Package Manager in Visual Studio
-- https://www.nuget.org/packages/SystemLibrary.Common.Web.HttpBaseClient/
+Selling points:
+* Cache's the underlying TCP Socket Connection for 5 minutes
+  * No more socket exhaustion, nor need of 'iisreset' due to DNS changes or network bugs
+* Configure a 'Retry Request' if a DNS change occurs
+  * A new TCP Socket Connection will be used if the Cached connection fails due to DNS change
+* Configure a 'Timeout' per request or per client, or a mix
 
-## Docs
+
+## Docs			
+Documentation with samples:
 https://systemlibrary.github.io/systemlibrary-common-web-httpbaseclient/
 
+## Nuget
+https://www.nuget.org/packages/SystemLibrary.Common.Web.HttpBaseClient/
+
+## Suggestions and feedback
+support@systemlibrary.com
+
 ## Lisence
-- It's free forever, copy paste as you'd like...
+- It's free forever, copy paste as you'd like

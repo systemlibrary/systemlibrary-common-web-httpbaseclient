@@ -1,0 +1,1 @@
+nuget pack SystemLibrary.Common.Web.HttpBaseClient.csproj -p Configuration=Release

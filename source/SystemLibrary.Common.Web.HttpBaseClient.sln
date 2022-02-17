@@ -3,24 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemLibrary.Common.Web.HttpBaseClient", "SystemLibrary.Common.Web.HttpBaseClient\SystemLibrary.Common.Web.HttpBaseClient.csproj", "{8C0C1EEA-E96B-4DA1-B0E3-5EF54F4C97C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SystemLibrary.Common.Web.HttpBaseClient", "SystemLibrary.Common.Web.HttpBaseClient\SystemLibrary.Common.Web.HttpBaseClient.csproj", "{6ECC4326-ACBF-47EC-A25B-E02A6DD6C96B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemLibrary.Common.Web.HttpBaseClient.Tests", "SystemLibrary.Common.Web.HttpBaseClient.Tests\SystemLibrary.Common.Web.HttpBaseClient.Tests.csproj", "{EF015A7B-0876-483A-86D6-00C438EF4446}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SystemLibrary.Common.Web.HttpBaseClient.Tests", "SystemLibrary.Common.Web.HttpBaseClient.Tests\SystemLibrary.Common.Web.HttpBaseClient.Tests.csproj", "{7BBEF8FF-D488-4794-A8BD-396F390134F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8C0C1EEA-E96B-4DA1-B0E3-5EF54F4C97C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8C0C1EEA-E96B-4DA1-B0E3-5EF54F4C97C5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EF015A7B-0876-483A-86D6-00C438EF4446}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF015A7B-0876-483A-86D6-00C438EF4446}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ECC4326-ACBF-47EC-A25B-E02A6DD6C96B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ECC4326-ACBF-47EC-A25B-E02A6DD6C96B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BBEF8FF-D488-4794-A8BD-396F390134F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BBEF8FF-D488-4794-A8BD-396F390134F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {42168976-43A7-46CB-B048-277F0E8CD7BB}
+		SolutionGuid = {B8390EF5-99C5-4938-94B2-E1202956C91C}
 	EndGlobalSection
 EndGlobal
