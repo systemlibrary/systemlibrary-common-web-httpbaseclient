@@ -12,7 +12,7 @@ namespace SystemLibrary.Common.Web
     ///     ...,
     ///     "systemLibraryCommonWebHttpBaseClient": {
     ///         "retryRequestTimeoutSeconds": 10,
-    ///         "cacheDurationSeconds": 300
+    ///         "cacheClientConnectionSeconds": 300
     ///     },
     ///     ...
     /// }
@@ -23,7 +23,7 @@ namespace SystemLibrary.Common.Web
         public class Configuration
         {
             public int RetryRequestTimeoutSeconds { get; set; } = 10;
-            public int CacheDurationSeconds { get; set; } = 300;
+            public int CacheClientConnectionSeconds { get; set; } = 300;
         }
 
         public AppSettingsConfig()
