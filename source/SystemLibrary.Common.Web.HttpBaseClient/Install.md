@@ -4,7 +4,7 @@
 
 * Open your project/solution in Visual Studio
 * Open Nuget Project Manager
-* Search and install SystemLibrary.Common.Web
+* Search and install SystemLibrary.Common.Web.HttpBaseClient
 
 ## First time usage
 
@@ -12,9 +12,9 @@
 
 - Sample:
 ```csharp  
-	public void ConfigureServices(IServiceCollection services)
+	public string GetFrontPageOfSysLibAsString()
 	{
-		services.CommonServices(); //Extension inside this package
+		return new HttpBaseClient().Get<string>("https://www.systemlibrary.com/").Data;
 	}
 ```
 
@@ -24,7 +24,9 @@
 appSettings.json:
 ```json  
 	{
-		"systemLibraryCommonWeb": {
+		"systemLibraryCommonWebHttpBaseClient": {
+			"retryRequestTimeoutSeconds": 12,
+			"cacheDurationSeconds": 320
 		}
 	}
 ```  
