@@ -32,19 +32,19 @@ references:
   commentId: T:SystemLibrary.Common.Web.AppSettingsConfig.Configuration
   fullName: SystemLibrary.Common.Web.AppSettingsConfig.Configuration
   nameWithType: AppSettingsConfig.Configuration
-- uid: SystemLibrary.Common.Web.AppSettingsConfig.Configuration.CacheDurationSeconds
-  name: CacheDurationSeconds
-  href: SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.AppSettingsConfig.Configuration.html#SystemLibrary_Common_Web_AppSettingsConfig_Configuration_CacheDurationSeconds
-  commentId: P:SystemLibrary.Common.Web.AppSettingsConfig.Configuration.CacheDurationSeconds
-  fullName: SystemLibrary.Common.Web.AppSettingsConfig.Configuration.CacheDurationSeconds
-  nameWithType: AppSettingsConfig.Configuration.CacheDurationSeconds
-- uid: SystemLibrary.Common.Web.AppSettingsConfig.Configuration.CacheDurationSeconds*
-  name: CacheDurationSeconds
-  href: SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.AppSettingsConfig.Configuration.html#SystemLibrary_Common_Web_AppSettingsConfig_Configuration_CacheDurationSeconds_
-  commentId: Overload:SystemLibrary.Common.Web.AppSettingsConfig.Configuration.CacheDurationSeconds
+- uid: SystemLibrary.Common.Web.AppSettingsConfig.Configuration.CacheClientConnectionSeconds
+  name: CacheClientConnectionSeconds
+  href: SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.AppSettingsConfig.Configuration.html#SystemLibrary_Common_Web_AppSettingsConfig_Configuration_CacheClientConnectionSeconds
+  commentId: P:SystemLibrary.Common.Web.AppSettingsConfig.Configuration.CacheClientConnectionSeconds
+  fullName: SystemLibrary.Common.Web.AppSettingsConfig.Configuration.CacheClientConnectionSeconds
+  nameWithType: AppSettingsConfig.Configuration.CacheClientConnectionSeconds
+- uid: SystemLibrary.Common.Web.AppSettingsConfig.Configuration.CacheClientConnectionSeconds*
+  name: CacheClientConnectionSeconds
+  href: SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.AppSettingsConfig.Configuration.html#SystemLibrary_Common_Web_AppSettingsConfig_Configuration_CacheClientConnectionSeconds_
+  commentId: Overload:SystemLibrary.Common.Web.AppSettingsConfig.Configuration.CacheClientConnectionSeconds
   isSpec: "True"
-  fullName: SystemLibrary.Common.Web.AppSettingsConfig.Configuration.CacheDurationSeconds
-  nameWithType: AppSettingsConfig.Configuration.CacheDurationSeconds
+  fullName: SystemLibrary.Common.Web.AppSettingsConfig.Configuration.CacheClientConnectionSeconds
+  nameWithType: AppSettingsConfig.Configuration.CacheClientConnectionSeconds
 - uid: SystemLibrary.Common.Web.AppSettingsConfig.Configuration.RetryRequestTimeoutSeconds
   name: RetryRequestTimeoutSeconds
   href: SystemLibrary.Common.Web.HttpBaseClient/SystemLibrary.Common.Web.AppSettingsConfig.Configuration.html#SystemLibrary_Common_Web_AppSettingsConfig_Configuration_RetryRequestTimeoutSeconds
