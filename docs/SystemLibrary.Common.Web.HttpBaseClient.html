@@ -203,6 +203,7 @@ public void Test()
   <h3 id="constructors">Constructors
   </h3>
   
+  <div class="custom-container">
   
   <div class="custom-source-code-link-container custom-source-code-link--SystemLibrary_Common_Web_HttpBaseClient__ctor_System_Boolean_System_Boolean_System_Int32_">
   	<span class="small pull-right mobile-hide">
@@ -252,11 +253,13 @@ public void Test()
   
   	</div>
   </div>
+  </div>
   
   
   <h3 id="methods">Methods
   </h3>
   
+  <div class="custom-container">
   <div class="custom-menu-summary-data">
   	<div class="markdown level1 summary member-summary"><p>Send a HTTP DELETE request</p>
 </div>
@@ -368,9 +371,11 @@ var response = new HttpBaseClient().Delete&lt;string>(&quot;https://www.systemli
   		</div>
   	</div>
   </div>
+  </div>
   
   
   
+  <div class="custom-container">
   <div class="custom-menu-summary-data">
   	<div class="markdown level1 summary member-summary"><p>Send a HTTP DELETE async request</p>
 </div>
@@ -482,9 +487,11 @@ var response = await new HttpBaseClient().DeleteAsync&lt;string>(&quot;https://w
   		</div>
   	</div>
   </div>
+  </div>
   
   
   
+  <div class="custom-container">
   <div class="custom-menu-summary-data">
   	<div class="markdown level1 summary member-summary"><p>Send a HTTP GET request</p>
 </div>
@@ -602,9 +609,11 @@ var json = client.Get();
   		</div>
   	</div>
   </div>
+  </div>
   
   
   
+  <div class="custom-container">
   <div class="custom-menu-summary-data">
   	<div class="markdown level1 summary member-summary"><p>Send a HTTP GET async request</p>
 </div>
@@ -711,9 +720,11 @@ var response = new await HttpBaseClient().GetAsync&lt;string>(&quot;https://www.
   		</div>
   	</div>
   </div>
+  </div>
   
   
   
+  <div class="custom-container">
   <div class="custom-menu-summary-data">
   	<div class="markdown level1 summary member-summary"><p>Send a HTTP HEAD request</p>
 </div>
@@ -819,9 +830,11 @@ var response = new await HttpBaseClient().GetAsync&lt;string>(&quot;https://www.
   		</div>
   	</div>
   </div>
+  </div>
   
   
   
+  <div class="custom-container">
   <div class="custom-menu-summary-data">
   	<div class="markdown level1 summary member-summary"><p>Send a HTTP HEAD async request</p>
 </div>
@@ -927,9 +940,11 @@ var response = new await HttpBaseClient().GetAsync&lt;string>(&quot;https://www.
   		</div>
   	</div>
   </div>
+  </div>
   
   
   
+  <div class="custom-container">
   <div class="custom-menu-summary-data">
   	<div class="markdown level1 summary member-summary"><p>Send a HTTP POST request</p>
 </div>
@@ -1041,9 +1056,11 @@ var response = new HttpBaseClient().Post&lt;string>(&quot;https://www.systemlibr
   		</div>
   	</div>
   </div>
+  </div>
   
   
   
+  <div class="custom-container">
   <div class="custom-menu-summary-data">
   	<div class="markdown level1 summary member-summary"><p>Send a HTTP POST async request</p>
 </div>
@@ -1155,9 +1172,11 @@ var response = await new HttpBaseClient().PostAsync&lt;string>(&quot;https://www
   		</div>
   	</div>
   </div>
+  </div>
   
   
   
+  <div class="custom-container">
   <div class="custom-menu-summary-data">
   	<div class="markdown level1 summary member-summary"><p>Send a HTTP PUT request</p>
 </div>
@@ -1269,9 +1288,11 @@ var response = new HttpBaseClient().Put&lt;string>(&quot;https://www.systemlibra
   		</div>
   	</div>
   </div>
+  </div>
   
   
   
+  <div class="custom-container">
   <div class="custom-menu-summary-data">
   	<div class="markdown level1 summary member-summary"><p>Send a HTTP PUT async request</p>
 </div>
@@ -1382,6 +1403,7 @@ var response = await new HttpBaseClient().PutAsync&lt;string>(&quot;https://www.
   			</table>
   		</div>
   	</div>
+  </div>
   </div>
   
   
@@ -1638,8 +1660,17 @@ var response = await new HttpBaseClient().PutAsync&lt;string>(&quot;https://www.
   				continue;
   			}
   
-  			if (value.includes('[DocfxHide]')) {
-  				items[i].classList.add("docfxhide-attribute");
+  			if (value.includes('[DocFxHide]')) {
+  				let parent = items[i].parentNode;
+  				if(parent) {
+  					if(parent.parentNode !== null && parent.parentNode.classList.contains("custom-container")) {
+  						parent.parentNode.classList.add("docfxhide-attribute");
+  					} else {
+  						parent.classList.add("docfxhide-attribute");
+  					}
+  				} else {
+  					items[i].classList.add("docfxhide-attribute");
+  				}
   				continue;
   			}
   

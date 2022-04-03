@@ -143,6 +143,7 @@
   <h3 id="properties">Properties
   </h3>
   
+  <div class="custom-container">
   
   <div class="custom-source-code-link-container custom-source-code-link--SystemLibrary_Common_Web_AppSettingsConfig_Configuration_CacheClientConnectionSeconds">
   	<span class="small pull-right mobile-hide">
@@ -162,6 +163,7 @@
   
   	</div>
   </div>
+  </div>
   
   
   <h5 class="propertyValue">Property Value</h5>
@@ -180,6 +182,7 @@
   	</tbody>
   </table>
   
+  <div class="custom-container">
   
   <div class="custom-source-code-link-container custom-source-code-link--SystemLibrary_Common_Web_AppSettingsConfig_Configuration_RetryRequestTimeoutSeconds">
   	<span class="small pull-right mobile-hide">
@@ -198,6 +201,7 @@
   		</div>
   
   	</div>
+  </div>
   </div>
   
   
@@ -469,8 +473,17 @@
   				continue;
   			}
   
-  			if (value.includes('[DocfxHide]')) {
-  				items[i].classList.add("docfxhide-attribute");
+  			if (value.includes('[DocFxHide]')) {
+  				let parent = items[i].parentNode;
+  				if(parent) {
+  					if(parent.parentNode !== null && parent.parentNode.classList.contains("custom-container")) {
+  						parent.parentNode.classList.add("docfxhide-attribute");
+  					} else {
+  						parent.classList.add("docfxhide-attribute");
+  					}
+  				} else {
+  					items[i].classList.add("docfxhide-attribute");
+  				}
   				continue;
   			}
   
